@@ -2,26 +2,55 @@
 <header>
     <meta charset="UTF-8">
     <title>Calculating a decent tip</title>
-    <img src="http://joelhavea.com/wp-content/uploads/2017/01/tip-jar-2.png" alt="tip jar" width="200" height="200">"
-    <h1 style="background-color: forestgreen"> Tip Calculator</h1>
-    <script>function myTip(slideval,bill){
-var tip = document.getElementById("tip"); 
-var bill = document.getElementById("bill").value;
-var slideValue = document.getElementById("slideValue");
-var prcnt = slideval *.01;
-slideValue.innerHTML = slideval + "%";
-if(isNaN(bill)===true){tip.innerHTML = ": This is not a number!"
-;} else {tip.innerHTML = "$" + (bill * prcnt).toFixed(2);}    
-    }
-    </script>
+<style>
+body {
+  background-color: rgb(127, 165, 149);
+}
+
+.tipJar {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.text {
+  font-size: 23px;
+}
+
+h1 {
+  position: relative;
+  left: 42%;
+}
+</style>
+  <img class=t ipJar src="http://joelhavea.com/wp-content/uploads/2017/01/tip-jar-2.png" alt="tip jar" width="200" height="200">
+  <h1> Tip Calculator</h1>
+  <script>
+  function myTip(slideval, bill) {
+  var tip = document.getElementById("tip");
+  var bill = document.getElementById(bill).value;
+  var slideValue = document.getElementById("slideValue");
+  var prcnt = slideval * 0.01;
+  slideValue.innerHTML = slideval + "%";
+  if (isNaN(bill) === true) {
+    tip.innerHTML = ": This is not a number!";
+  } else {
+    tip.innerHTML = "$" + (bill * prcnt).toFixed(2);
+  }
+}
+
+  </script>
 </header>
+
 <body>
-What is the total amount of your bill? $
-<input type="text" id= "bill"> <br>
-What percentage do you want to tip? 
-<input type= "range" min= "1" max="100" value="0" step="1" onchange="myTip(this.value,'bill')" style= width:400px>
-<span id="slideValue">0%</span>
-<h2>Tip you should leave <span id="tip"></span></h2>
+  <span class=t ext>What is the total amount of your bill? $</span>
+  <input type="text" id="bill"> <br><br>
+  <span class=t ext> What percentage do you want to tip?</span>
+  <input type="range" min="0" max="100" value="0" step="1" onchange="myTip(this.value,'bill')" style=width:400px>
+  <span class=t ext id="slideValue">1%</span>
+  <h2>Tip you should leave <span id="tip"></span></h2><br>
+  <p>Typically its customary to tip between 15-20% of the total bill. For more information on tipping standards, check out this link <a href="https://www.usatoday.com/story/money/2017/06/22/tipping-etiquette-when-how-much/412098001/">Tipping Info</a></p>
+
 </body>
-</html> 
+
+</html>
     
